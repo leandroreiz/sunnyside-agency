@@ -1,0 +1,122 @@
+$sm: 375px;
+$md: 800px;
+$lg: 1440px;
+
+@mixin minMedia($propertyName, $defaultValue, $mediaQueries: ()) {
+  #{$propertyName}: #{$defaultValue};
+
+  @each $breakpoint, $value in $mediaQueries {
+    @media (min-width: #{$breakpoint}) {
+      #{$propertyName}: #{$value};
+    }
+  }
+}
+
+$base: 1rem;
+
+$sizes: (
+  "1": $base * .25,
+  "2": $base * .5,
+  "3": $base * .75,
+  "4": $base * 1,
+  "5": $base * 1.25,
+  "6": $base * 1.5,
+  "7": $base * 1.75,
+  "8": $base * 2,
+  "9": $base * 2.25,
+  "10": $base * 2.5,
+  "11": $base * 2.75,
+  "12": $base * 3,
+  "13": $base * 3.25,
+  "14": $base * 3.5,
+  "15": $base * 3.75,
+  "16": $base * 4,
+);
+
+$directions: (
+  "x": "inline", 
+  "y": "block", 
+  "l": "inline-start", 
+  "r": "inline-end", 
+  "t": "block-start", 
+  "b": "block-end"
+);
+
+@each $size, $sizeValue in $sizes {
+  .p {
+    &-#{$size} {
+      padding: $sizeValue;
+    }
+    @each $direction, $dirValue in $directions {
+      &#{$direction}-#{$size} {
+        padding-#{$dirValue}: #{$sizeValue};
+      }
+    }
+  }
+
+  .m {
+    &-#{$size} {
+      margin: $sizeValue;
+    }
+    @each $direction, $dirValue in $directions {
+      &#{$direction}-#{$size} {
+        margin-#{$dirValue}: #{$sizeValue};
+      }
+    }
+  }
+}
+
+$displays: block, none, inline, inline-block, flex, grid;
+
+@each $display in $displays {
+  .#{$display} {
+    display: #{$display};
+  }
+}
+
+$colors: (
+  // Primary Colors
+  "primary-red": "hsl(7, 99%, 70%)",
+  "primary-yellow": "hsl(51, 100%, 49%)",
+  "primary-green--dark": "hsl(167, 40%, 24%)",
+  "primary-blue": "hsl(198, 62%, 26%)",
+  "primary-green--light": "hsl(168, 34%, 41%)",
+  // Neutral Colors
+  "neutral-blue--dark": "hsl(212, 27%, 19%)",
+  "neutral-gray--dark": "hsl(213, 9%, 39%)",
+  "neutral-gray--normal": "hsl(232, 10%, 55%)",
+  "neutral-gray--light": "hsl(210, 4%, 67%)",
+  "white": "hsl(0, 0%, 100%)",
+);
+
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    background-color: #{$value};
+  }
+  .text-#{$color} {
+    color: #{$value};
+  }
+}
+
+
+$fontSizes: (
+  "sm": clamp(0.94rem, calc(0.94rem + 0.00vw), 0.94rem),
+  "md": clamp(1.35rem, calc(1.24rem + 0.48vw), 1.67rem),
+  "lg": clamp(1.62rem, calc(1.41rem + 0.90vw), 2.22rem),
+  "xl": clamp(2.33rem, calc(1.76rem + 2.43vw), 3.95rem),
+  "2xl": clamp(7.01rem, calc(2.07rem + 5.49vw), 3.36rem),
+);
+
+@each $fontSize, $value in $fontSizes {
+  .text-#{$fontSize} {
+    font-size: $value;
+  }
+}
+
+// Main block
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
