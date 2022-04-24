@@ -224,7 +224,7 @@ $textPositions: (start, end, left, right, center, justify, match-parent);
 // Custom classes
 
 // Header
-h1 {
+h1, h3 {
   letter-spacing: 0.1em;
 }
 
@@ -300,4 +300,20 @@ h1 {
 
 .photography--container {
   @include minMedia(background-image, url('./images/mobile/image-photography.jpg'), ($lg: url('./images/desktop/image-photography.jpg')));
+}
+
+// Testimonial
+.testimonial-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.responsive > * {
+  @include minMedia(flex, 1 1 100%, ($md: 1 1 33%));
+}
+
+// Image gallery
+.image-gallery > * {
+  @include minMedia(flex, 1 1 50%, ($md: 1 1 25%));
 }

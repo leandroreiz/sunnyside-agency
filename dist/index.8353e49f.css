@@ -1188,7 +1188,7 @@
   line-height: 1.6;
 }
 
-h1 {
+h1, h3 {
   letter-spacing: .1em;
 }
 
@@ -1286,6 +1286,32 @@ h1 {
 @media (min-width: 1440px) {
   .photography--container {
     background-image: url("image-photography.77b335ff.jpg");
+  }
+}
+
+.testimonial-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.responsive > * {
+  flex: 100%;
+}
+
+@media (min-width: 800px) {
+  .responsive > * {
+    flex: 33%;
+  }
+}
+
+.image-gallery > * {
+  flex: 50%;
+}
+
+@media (min-width: 800px) {
+  .image-gallery > * {
+    flex: 25%;
   }
 }
 
