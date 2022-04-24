@@ -216,18 +216,28 @@ $textPositions: (start, end, left, right, center, justify, match-parent);
   height: 100%;
 }
 
+.lh {
+  line-height: 1.6;
+}
+
 ///////////////////////////////////
 // Custom classes
 
+// Header
 h1 {
   letter-spacing: 0.1em;
 }
 
-.header {
-  @include minMedia(background-image, url('./images/mobile/image-header.jpg'), ($lg: url('./images/desktop/image-header.jpg')));
+.header,
+.graphic-design--container,
+.photography--container {
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+.header {
+  @include minMedia(background-image, url('./images/mobile/image-header.jpg'), ($lg: url('./images/desktop/image-header.jpg')));
 }
 
 .navbar {
@@ -235,12 +245,9 @@ h1 {
   justify-content: space-between;
 }
 
+// Brand section
 .brand-section > * {
   @include minMedia(flex, 0 1 100%, ($md: 0 1 50%));
-}
-
-.brand-section--text {
-  line-height: 1.6;
 }
 
 .learn-more--yellow,
@@ -277,16 +284,20 @@ h1 {
   }
 }
 
-.contact-btn {
-  background-color: hsl(51, 100%, 49%);
+// Services section
+.services-section > * {
+  @include minMedia(flex, 0 1 100%, ($md: 1 1 50%));
 }
 
-/////////////////////////////////////
-
-.graphic-container {
-  background-image: url('./images/mobile/image-graphic-design.jpg');
+.services-section--text {
+  letter-spacing: -0.2;
+  bottom: 0;
 }
 
-.photography-container {
-  background-image: url('./images/mobile/image-photography.jpg');
+.graphic-design--container {
+  @include minMedia(background-image, url('./images/mobile/image-graphic-design.jpg'), ($lg: url('./images/desktop/image-graphic-design.jpg')));
+}
+
+.photography--container {
+  @include minMedia(background-image, url('./images/mobile/image-photography.jpg'), ($lg: url('./images/desktop/image-photography.jpg')));
 }
