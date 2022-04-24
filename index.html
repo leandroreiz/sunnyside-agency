@@ -16,52 +16,99 @@
 
     <link rel="stylesheet" href="style.scss" />
   </head>
-  <body>
-    <header>
-      <nav>About Services Projects Contact</nav>
-      <h1>We are creatives</h1>
+
+  <body class="text-md">
+    <header class="header container text-center">
+      <nav class="navbar flex px-4 py-6">
+        <a href="/" aria-label="go home">
+          <img src="./images/logo.svg" alt="sunnyside logo" />
+        </a>
+
+        <!-- Navigation Bar Items -->
+        <div class="navbar--items none">
+          <ul role="menubar">
+            <li role="none">
+              <a href="/" role="menuitem">About</a>
+            </li>
+            <li role="none">
+              <a href="/" role="menuitem">Services</a>
+            </li>
+            <li role="none">
+              <a href="/" role="menuitem">Projects</a>
+            </li>
+            <li role="none">
+              <a href="/" class="contact-btn" role="menuitem">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-icon" aria-label="open menu">
+          <img src="./images/icon-hamburger.svg" alt="menu icon" />
+        </div>
+      </nav>
+
+      <h1 class="text-xl text-white uppercase font-heading--700 py-16">
+        We are creatives
+      </h1>
+
+      <img src="./images/icon-arrow-down.svg" alt="arrow pointing down" />
     </header>
 
     <main>
       <section>
-        <div>
-          <div>
-            <h2>Transform your brand</h2>
-            <p>
-              We are a full-service creative agency specializing in helping
-              brands grow fast. Engage your clients through compelling visuals
-              that do most of the marketing for you.
-            </p>
+        <div class="container text-center">
+          <div class="brand-section flex flex-wrap-reverse">
+            <div class="px-6 py-16">
+              <h2
+                class="brand-section--heading font-heading--900 text-blue--dark text-xl mb-6"
+              >
+                Transform your brand
+              </h2>
+              <p class="brand-section--text font-body text-gray--normal mb-6">
+                We are a full-service creative agency specializing in helping
+                brands grow fast. Engage your clients through compelling visuals
+                that do most of the marketing for you.
+              </p>
+              <a class="learn-more--yellow" href="/">Learn more</a>
+            </div>
+
+            <div>
+              <img
+                src="./images/mobile/image-transform.jpg"
+                class="wh-100"
+                alt="an egg with a yellow background"
+              />
+            </div>
           </div>
 
-          <div>
-            <img
-              src="./images/mobile/image-transform.jpg"
-              alt="an egg with a yellow background"
-            />
-          </div>
+          <div class="brand-section flex flex-wrap">
+            <div>
+              <img
+                src="./images/mobile/image-stand-out.jpg"
+                class="wh-100"
+                alt="a pink-ish glass with a pink background"
+              />
+            </div>
 
-          <div>
-            <img
-              src="./images/mobile/image-stand-out.jpg"
-              alt="a pink-ish glass with a pink background"
-            />
-          </div>
-
-          <div>
-            <h2>Stand out to the right audience</h2>
-            <p>
-              Using a collaborative formula of designers,researchers,
-              photographers, ideographers, and copywriters, we'll build and
-              extend your brand in digital places.
-            </p>
-            <a href="">Learn more</a>
+            <div class="px-6 py-16">
+              <h2
+                class="brand-section--heading font-heading--900 text-blue--dark text-xl mb-6"
+              >
+                Stand out to the right audience
+              </h2>
+              <p class="brand-section--text font-body text-gray--normal mb-6">
+                Using a collaborative formula of designers, researchers,
+                photographers, videographers, and copywriters, we'll build and
+                extend your brand in digital places.
+              </p>
+              <a class="learn-more--red" href="">Learn more</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section>
-        <div class="graphic-design">
+        <div class="graphic-container">
           <h2>Graphic design</h2>
           <p>
             Great design makes you memorable. We deliver artwork that
@@ -70,7 +117,7 @@
           </p>
         </div>
 
-        <div class="photography">
+        <div class="photography-container">
           <h2>Photography</h2>
           <p>
             Increase your credibility by getting the most stunning, high-quality
@@ -126,7 +173,7 @@
           <!-- images -->
         </div>
         <div>
-          <h2>Sunnyside</h2>
+          <h2>sunnyside</h2>
           <div>
             <a href="#">About</a>
             <a href="#">Services</a>

@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+///////////////////////////////////
+// Mixins
+
+// Source: https://levelup.gitconnected.com/the-easier-way-to-write-media-queries-with-scss-mixin-c7c956150551
+
 $sm: 375px;
 $md: 800px;
 $lg: 1440px;
@@ -12,6 +25,10 @@ $lg: 1440px;
   }
 }
 
+///////////////////////////////////
+// Auto-generated classes
+
+// Padding, Margin and Gap
 $base: 1rem;
 
 $sizes: (
@@ -64,8 +81,15 @@ $directions: (
       }
     }
   }
+
+  .gap {
+    &-#{$size} {
+      gap: $sizeValue;
+    }
+  }
 }
 
+// Display
 $displays: block, none, inline, inline-block, flex, grid;
 
 @each $display in $displays {
@@ -74,34 +98,44 @@ $displays: block, none, inline, inline-block, flex, grid;
   }
 }
 
-$colors: (
-  // Primary Colors
-  "primary-red": "hsl(7, 99%, 70%)",
-  "primary-yellow": "hsl(51, 100%, 49%)",
-  "primary-green--dark": "hsl(167, 40%, 24%)",
-  "primary-blue": "hsl(198, 62%, 26%)",
-  "primary-green--light": "hsl(168, 34%, 41%)",
-  // Neutral Colors
-  "neutral-blue--dark": "hsl(212, 27%, 19%)",
-  "neutral-gray--dark": "hsl(213, 9%, 39%)",
-  "neutral-gray--normal": "hsl(232, 10%, 55%)",
-  "neutral-gray--light": "hsl(210, 4%, 67%)",
+// Positions
+$positions: relative, absolute;
+
+@each $position in $positions {
+  .#{$position} {
+    position: #{$position};
+  }
+}
+
+// Primary and Neutral Colors List
+$colors: ( 
+  "red": "hsl(7, 99%, 70%)",
+  "blue": "hsl(198, 62%, 26%)",
+  "yellow": "hsl(51, 100%, 49%)",
+  "green--dark": "hsl(167, 40%, 24%)",
+  "green--light": "hsl(168, 34%, 41%)",
+  "blue--dark": "hsl(212, 27%, 19%)",
+  "gray--dark": "hsl(213, 9%, 39%)",
+  "gray--normal": "hsl(232, 10%, 55%)",
+  "gray--light": "hsl(210, 4%, 67%)",
   "white": "hsl(0, 0%, 100%)",
 );
 
+// Background and Text Color
 @each $color, $value in $colors {
   .bg-#{$color} {
     background-color: #{$value};
   }
+
   .text-#{$color} {
     color: #{$value};
   }
 }
 
-
+// Font Size List
 $fontSizes: (
   "sm": clamp(0.94rem, calc(0.94rem + 0.00vw), 0.94rem),
-  "md": clamp(1.35rem, calc(1.24rem + 0.48vw), 1.67rem),
+  "md": 18px,
   "lg": clamp(1.62rem, calc(1.41rem + 0.90vw), 2.22rem),
   "xl": clamp(2.33rem, calc(1.76rem + 2.43vw), 3.95rem),
   "2xl": clamp(7.01rem, calc(2.07rem + 5.49vw), 3.36rem),
@@ -113,18 +147,146 @@ $fontSizes: (
   }
 }
 
-// Main block
-*, *::after, *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 18px;
+// Text Aligment
+$textPositions: (start, end, left, right, center, justify, match-parent);
+
+@each $textPosition in $textPositions {
+  .text-#{$textPosition} {
+    text-align: $textPosition;
+  }
 }
 
-.graphic-design {
+///////////////////////////////////
+// Helper classes
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.flex {
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+.grid {
+  &-col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-col-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &-col-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.font-heading--700 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+}
+
+.font-heading--900 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+}
+
+.font-body {
+  font-family: 'Barlow', sans-serif;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center-left {
+  @include minMedia(text-align, center, ($md: left));
+}
+
+.wh-100 {
+  width: 100%;
+  height: 100%;
+}
+
+///////////////////////////////////
+// Custom classes
+
+h1 {
+  letter-spacing: 0.1em;
+}
+
+.header {
+  @include minMedia(background-image, url('./images/mobile/image-header.jpg'), ($lg: url('./images/desktop/image-header.jpg')));
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.brand-section > * {
+  @include minMedia(flex, 0 1 100%, ($md: 0 1 50%));
+}
+
+.brand-section--text {
+  line-height: 1.6;
+}
+
+.learn-more--yellow,
+.learn-more--red {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: hsl(212, 27%, 19%);
+  position: relative;
+
+  &::before {
+    content: '';
+    background-color: hsl(51, 100%, 49%);
+    position: absolute;
+    left: -5%;
+    bottom: -2;
+    height: 10px;
+    width: 110%;
+    border-radius: 30px;
+    opacity: 0.4;
+    z-index: -1;
+    transition: opacity .2s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;    
+  }
+}
+
+.learn-more--red {
+  &::before {
+    background-color: hsl(7, 99%, 70%);
+  }
+}
+
+.contact-btn {
+  background-color: hsl(51, 100%, 49%);
+}
+
+/////////////////////////////////////
+
+.graphic-container {
   background-image: url('./images/mobile/image-graphic-design.jpg');
 }
 
-.photography {
+.photography-container {
   background-image: url('./images/mobile/image-photography.jpg');
 }
