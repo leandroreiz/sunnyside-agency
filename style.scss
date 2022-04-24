@@ -112,6 +112,7 @@ $colors: (
   "red": "hsl(7, 99%, 70%)",
   "blue": "hsl(198, 62%, 26%)",
   "yellow": "hsl(51, 100%, 49%)",
+  "green": "#90d4c5",
   "green--dark": "hsl(167, 40%, 24%)",
   "green--light": "hsl(168, 34%, 41%)",
   "blue--dark": "hsl(212, 27%, 19%)",
@@ -315,5 +316,31 @@ h1, h3 {
 
 // Image gallery
 .image-gallery > * {
-  @include minMedia(flex, 1 1 50%, ($md: 1 1 25%));
+  height: 50%;
+  width: 50%;
+}
+
+// Footer
+.footer-links {
+  align-items: center;
+  justify-content: space-between;
+
+  & > * {
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.social-links {
+  align-items: center;
+  justify-content: space-around;
+  padding-inline: 5rem;
+
+  & > *:hover {
+    fill: white;
+    cursor: pointer;
+  }
 }
