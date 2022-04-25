@@ -321,6 +321,10 @@ h1, h3 {
 }
 
 // Footer
+.footer {
+  height: 100vh;
+}
+
 .footer-links {
   align-items: center;
   justify-content: space-between;
@@ -328,7 +332,13 @@ h1, h3 {
   & > * {
     text-decoration: none;
 
-    &:hover {
+    &:link,
+    &:visited {
+      color: hsl(168, 34%, 41%);
+    }
+
+    &:hover,
+    &:active {
       color: white;
     }
   }
@@ -339,8 +349,28 @@ h1, h3 {
   justify-content: space-around;
   padding-inline: 5rem;
 
+  & > * {
+    font-size: 1.4rem;
+    color: hsl(168, 34%, 41%);
+  }
+
   & > *:hover {
-    fill: white;
+    color: white;
     cursor: pointer;
+  }
+}
+
+.coded-by > * {
+  text-decoration: none;
+  color: hsl(168, 34%, 41%);
+
+  &:link,
+  &:visited {
+    color: hsl(168, 34%, 41%);
+  }
+
+  &:hover,
+  &:active {
+    color: white;
   }
 }

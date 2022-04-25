@@ -1318,6 +1318,10 @@ h1, h3 {
   width: 50%;
 }
 
+.footer {
+  height: 100vh;
+}
+
 .footer-links {
   justify-content: space-between;
   align-items: center;
@@ -1327,7 +1331,11 @@ h1, h3 {
   text-decoration: none;
 }
 
-.footer-links > :hover {
+.footer-links > :link, .footer-links > :visited {
+  color: #458c7e;
+}
+
+.footer-links > :hover, .footer-links > :active {
   color: #fff;
 }
 
@@ -1337,9 +1345,27 @@ h1, h3 {
   padding-inline: 5rem;
 }
 
+.social-links > * {
+  color: #458c7e;
+  font-size: 1.4rem;
+}
+
 .social-links > :hover {
-  fill: #fff;
+  color: #fff;
   cursor: pointer;
+}
+
+.coded-by > * {
+  color: #458c7e;
+  text-decoration: none;
+}
+
+.coded-by > :link, .coded-by > :visited {
+  color: #458c7e;
+}
+
+.coded-by > :hover, .coded-by > :active {
+  color: #fff;
 }
 
 /*# sourceMappingURL=index.8353e49f.css.map */
