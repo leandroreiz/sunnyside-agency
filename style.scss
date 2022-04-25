@@ -135,11 +135,10 @@ $colors: (
 
 // Font Size List
 $fontSizes: (
-  "sm": clamp(0.94rem, calc(0.94rem + 0.00vw), 0.94rem),
-  "md": 18px,
-  "lg": clamp(1.62rem, calc(1.41rem + 0.90vw), 2.22rem),
-  "xl": clamp(2.33rem, calc(1.76rem + 2.43vw), 3.95rem),
-  "2xl": clamp(7.01rem, calc(2.07rem + 5.49vw), 3.36rem),
+  "sm": 0.95rem,
+  "md": 1.125rem,
+  "lg": 1.8rem,
+  "xl": 2.5rem,
 );
 
 @each $fontSize, $value in $fontSizes {
@@ -217,7 +216,7 @@ $textPositions: (start, end, left, right, center, justify, match-parent);
   height: 100%;
 }
 
-.lh {
+.line-height {
   line-height: 1.6;
 }
 
@@ -226,7 +225,7 @@ $textPositions: (start, end, left, right, center, justify, match-parent);
 
 // Header
 h1, h3 {
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
 .header,
@@ -297,7 +296,7 @@ h1, h3 {
     height: 10px;
     width: 110%;
     border-radius: 30px;
-    opacity: 0.4;
+    opacity: 0.2;
     z-index: -1;
     transition: opacity .2s ease;
   }

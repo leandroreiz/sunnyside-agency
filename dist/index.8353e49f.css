@@ -1086,23 +1086,19 @@
 }
 
 .text-sm {
-  font-size: .94rem;
+  font-size: .95rem;
 }
 
 .text-md {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .text-lg {
-  font-size: clamp(1.62rem, 1.41rem + .9vw, 2.22rem);
+  font-size: 1.8rem;
 }
 
 .text-xl {
-  font-size: clamp(2.33rem, 1.76rem + 2.43vw, 3.95rem);
-}
-
-.text-2xl {
-  font-size: clamp(7.01rem, 2.07rem + 5.49vw, 3.36rem);
+  font-size: 2.5rem;
 }
 
 .text-start {
@@ -1186,12 +1182,12 @@
   height: 100%;
 }
 
-.lh {
+.line-height {
   line-height: 1.6;
 }
 
 h1, h3 {
-  letter-spacing: .1em;
+  letter-spacing: .2em;
 }
 
 .header, .graphic-design--container, .photography--container {
@@ -1279,7 +1275,7 @@ h1, h3 {
   content: "";
   height: 10px;
   width: 110%;
-  opacity: .4;
+  opacity: .2;
   z-index: -1;
   background-color: #fad400;
   border-radius: 30px;
