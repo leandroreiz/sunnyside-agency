@@ -1210,12 +1210,24 @@ header h1 {
 header .navbar {
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5rem;
 }
 
 @media (min-width: 800px) {
   header .navbar {
     padding: 3rem;
+  }
+}
+
+header .navbar--logo {
+  width: 124px;
+  height: auto;
+}
+
+@media (min-width: 800px) {
+  header .navbar--logo {
+    width: 170px;
   }
 }
 
@@ -1441,12 +1453,6 @@ header .navbar .menu-icon {
   height: 100vh;
 }
 
-@media (min-width: 800px) {
-  .footer {
-    height: auto;
-  }
-}
-
 .footer--image-gallery {
   grid-template-columns: 1fr 1fr;
 }
@@ -1461,6 +1467,16 @@ header .navbar .menu-icon {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.footer--logo {
+  width: 124px;
+}
+
+@media (min-width: 800px) {
+  .footer--logo {
+    width: 170px;
+  }
 }
 
 .footer--content {

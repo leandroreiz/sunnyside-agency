@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
 
 // Resetting Styles
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -243,7 +245,13 @@ header {
     @include minMedia(padding, 1.5rem, ($md: 3rem));
 
     width: 100%;
+    align-items: center;
     justify-content: space-between;
+
+    &--logo {
+      @include minMedia(width, 124px, ($md: 170px));
+      height: auto;
+    }
   
     &--items {
       list-style-type: none;
@@ -388,7 +396,8 @@ header {
 // Footer
 
 .footer {
-  @include minMedia(height, 100vh, ($md: auto));
+  height: 100vh;
+  // @include minMedia(height, 100vh, ($md: auto));
 
   &--image-gallery {
     @include minMedia(grid-template-columns, 1fr 1fr, ($md: 1fr 1fr 1fr 1fr));
@@ -398,6 +407,10 @@ header {
       width: 100%;
       height: auto;
     }
+  }
+
+  &--logo {
+    @include minMedia(width, 124px, ($md: 170px));
   }
 
   &--content {
