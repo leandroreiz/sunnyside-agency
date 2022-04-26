@@ -6,10 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 ///////////////////////////////////
-// Mixins
+// MIXINS
 ///////////////////////////////////
 
 $sm: 375px;
@@ -29,7 +30,7 @@ $lg: 1440px;
 // Source: https://levelup.gitconnected.com/the-easier-way-to-write-media-queries-with-scss-mixin-c7c956150551
 
 ///////////////////////////////////
-// Auto-Generated Classes
+// AUTO-GENERATED CLASSES
 ///////////////////////////////////
 
 // Padding, Margin and Gap
@@ -143,6 +144,7 @@ $fontSizes: (
   "md": 1.125rem,
   "lg": 1.8rem,
   "xl": 2.5rem,
+  "2xl": 3.2rem
 );
 
 @each $fontSize, $value in $fontSizes {
@@ -161,7 +163,7 @@ $textPositions: (start, end, left, right, center, justify, match-parent);
 }
 
 ///////////////////////////////////
-// Helper Classes
+// HELPER CLASSES
 ///////////////////////////////////
 
 h1, h3 {
@@ -216,13 +218,14 @@ h1, h3 {
 }
 
 ///////////////////////////////////
-// Custom Classes
+// CUSTOM CLASSES
 ///////////////////////////////////
 
 ///////////////////////////////////
 // Header
 
-.header {
+header {
+  // Background Image
   @include minMedia(background-image, url('./images/mobile/image-header.jpg'), ($lg: url('./images/desktop/image-header.jpg')));
 
   background-repeat: no-repeat;
@@ -230,7 +233,15 @@ h1, h3 {
   background-position: center;
   height: 100vh;
 
+  // We Are Creatives
+  & h1 {
+    @include minMedia(font-size, 2.5rem, ($md: 3.2rem));
+  }
+
+  // Navigation
   .navbar {
+    @include minMedia(padding, 1.5rem, ($md: 3rem));
+
     width: 100%;
     justify-content: space-between;
   
@@ -249,6 +260,7 @@ h1, h3 {
       }
     }
 
+    // Mobile Menu Icon
     & .menu-icon {
       @include minMedia(display, inline-block, ($md: none));
     }
@@ -256,65 +268,69 @@ h1, h3 {
 }
 
 ///////////////////////////////////
-// Brand Section
+// About
 
-.brand-section {
-  & > * {
+.about {
+  &--container {
+    @include minMedia(text-align, center, ($md: left));
+  }
+
+  &--container-line > * {
     @include minMedia(flex, 1 1 100%, ($md: 1 1 50%));
   }
 
-  &--heading {
-    @include minMedia(font-size, 1.8rem, ($md: 2.5rem));
-  }
-
-  &--text {
+  &--text-box {
     @include minMedia(padding-inline, 1.5rem, ($md: 7rem));
     align-items: center;
   }
 
-  &--text-responsive {
-    @include minMedia(text-align, center, ($md: left));
+  &--heading {
+    @include minMedia(font-size, 1.8rem, ($md: 2.5rem));
+  }  
+
+  &--learn-more--yellow,
+  &--learn-more--red {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: hsl(212, 27%, 19%);
+    position: relative;
+
+    &::before {
+      content: '';
+      background-color: hsl(51, 100%, 49%);
+      position: absolute;
+      left: -5%;
+      bottom: -2;
+      height: 10px;
+      width: 110%;
+      border-radius: 30px;
+      opacity: 0.2;
+      z-index: -1;
+      transition: opacity .2s ease;
+    }
+
+    &:hover::before {
+      opacity: 1;    
+    }
   }
-}
 
-.learn-more--yellow,
-.learn-more--red {
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: hsl(212, 27%, 19%);
-  position: relative;
-
-  &::before {
-    content: '';
-    background-color: hsl(51, 100%, 49%);
-    position: absolute;
-    left: -5%;
-    bottom: -2;
-    height: 10px;
-    width: 110%;
-    border-radius: 30px;
-    opacity: 0.2;
-    z-index: -1;
-    transition: opacity .2s ease;
-  }
-
-  &:hover::before {
-    opacity: 1;    
-  }
-}
-
-.learn-more--red {
-  &::before {
-    background-color: hsl(7, 99%, 70%);
+  &--learn-more--red {
+    &::before {
+      background-color: hsl(7, 99%, 70%);
+    }
   }
 }
 
 ///////////////////////////////////
-// Services Section
+// Services
 
-.services-section {
+.services {
+  &--container > * {
+    @include minMedia(flex, 1 1 100%, ($md: 1 1 50%));
+  }
+
   &--graphic-design {
     @include minMedia(background-image, url('./images/mobile/image-graphic-design.jpg'), ($lg: url('./images/desktop/image-graphic-design.jpg')));
   }
@@ -330,10 +346,6 @@ h1, h3 {
     background-position: center;
   }
 
-  & > * {
-    @include minMedia(flex, 1 1 100%, ($md: 1 1 50%));
-  }
-
   &--text-container {
     @include minMedia(width, 100%, ($md: 60%));
   
@@ -346,9 +358,11 @@ h1, h3 {
 ///////////////////////////////////
 // Testimonials
 
-.testimonial {
-  @include minMedia(margin-top, 4rem, ($md: 8rem));
-  @include minMedia(margin-bottom, 4rem, ($md: 6rem));
+.testimonials {
+  &--container {
+    @include minMedia(margin-top, 4rem, ($md: 8rem));
+    @include minMedia(margin-bottom, 4rem, ($md: 6rem));
+  }
 
   &--box {
     @include minMedia(padding-inline, 0, ($md: 2.5rem));
@@ -358,13 +372,13 @@ h1, h3 {
     @include minMedia(flex, 1 1 100%, ($md: 1 1 33%));
   }
 
-  &-image {
+  &--image {
     height: 80px;
     width: 80px;
     border-radius: 50%;
   }
 
-  &-heading {
+  &--heading {
     @include minMedia(font-size, 0.95rem, ($md: 1.35rem));
     @include minMedia(font-weight, 700, ($md: 900));
   }
@@ -374,19 +388,26 @@ h1, h3 {
 // Footer
 
 .footer {
-  height: 100vh;
+  @include minMedia(height, 100vh, ($md: auto));
 
-  &--image-gallery > * {
-    height: 50%;
-    width: 50%;
+  &--image-gallery {
+    @include minMedia(grid-template-columns, 1fr 1fr, ($md: 1fr 1fr 1fr 1fr));
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
-  
+
+  &--content {
+    place-items: center;
+  }
+
   &--links {
-    align-items: center;
-    justify-content: space-between;
-  
     & > * {
       text-decoration: none;
+      padding-inline: 1rem;
   
       &:link,
       &:visited {
@@ -401,18 +422,16 @@ h1, h3 {
   }
 
   &--social-links {
-    align-items: center;
-    justify-content: space-around;
-    padding-inline: 5rem;
-  
     & > * {
+      cursor: pointer;
+      margin-left: .75rem;
+      text-decoration: none;
       font-size: 1.4rem;
       color: hsl(168, 34%, 41%);
     }
   
     & > *:hover {
       color: white;
-      cursor: pointer;
     }
   }
 

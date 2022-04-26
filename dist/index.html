@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.654148d5.png">
 
@@ -14,37 +13,39 @@
     <title>Sunnyside Agency</title>
   </head>
 
-  <body class="text-md">
-    <header class="header container text-center">
-      <nav class="navbar flex px-6 py-12">
-        <a href="/" aria-label="go home">
+  <body>
+    <header class="container text-center">
+      <!-- NAVIGATION MENU -->
+      <nav class="navbar flex">
+        <a href="#">
           <img src="/logo.b3ecd760.svg" alt="sunnyside logo">
         </a>
 
-        <!-- Navigation Bar Items -->
         <div>
-          <ul class="navbar--items flex" role="menubar">
-            <li role="none">
-              <a href="/" class="menu-btn font-body text-white text-none px-8 py-5" role="menuitem">About</a>
+          <!-- Navigation Items -->
+          <ul class="navbar--items font-body flex">
+            <li>
+              <a href="#about" class="menu-btn font-body text-white text-none px-8 py-5" role="menuitem">About</a>
             </li>
-            <li role="none">
-              <a href="/" class="menu-btn font-body text-white text-none px-8 py-5" role="menuitem">Services</a>
+            <li>
+              <a href="#services" class="menu-btn font-body text-white text-none px-8 py-5">Services</a>
             </li>
-            <li role="none">
-              <a href="/" class="menu-btn font-body text-white text-none px-8 py-5" role="menuitem">Projects</a>
+            <li>
+              <a href="#testimonials" class="menu-btn font-body text-white text-none px-8 py-5">Projects</a>
             </li>
-            <li role="none">
-              <a href="/" class="contact-btn bg-white font-heading--700 text-blue--dark text-none uppercase px-8 py-5" role="menuitem">Contact</a>
+            <li>
+              <a href="#" class="contact-btn bg-white font-heading--700 text-blue--dark text-none uppercase px-8 py-5">Contact</a>
             </li>
           </ul>
         </div>
 
-        <div class="menu-icon" aria-label="open menu">
-          <img src="/icon-hamburger.3945b1bf.svg" alt="menu icon">
+        <!-- MOBILE NAVIGATION ICON -->
+        <div class="menu-icon">
+          <img src="/icon-hamburger.3945b1bf.svg" alt="Mobile menu icon">
         </div>
       </nav>
 
-      <h1 class="text-xl text-white uppercase font-heading--900 py-16">
+      <h1 class="text-white uppercase font-heading--900 py-16">
         We are creatives
       </h1>
 
@@ -52,12 +53,12 @@
     </header>
 
     <main>
-      <section>
-        <div class="container brand-section--text-responsive">
-          <div class="brand-section flex flex-wrap-reverse">
-            <div class="brand-section--text flex px-6 py-16">
+      <section class="about" id="about">
+        <div class="container about--container">
+          <div class="about--container-line flex flex-wrap-reverse">
+            <div class="about--text-box flex px-6 py-16">
               <div>
-                <h2 class="brand-section--heading font-heading--900 text-blue--dark text-lg mb-6">
+                <h2 class="about--heading font-heading--900 text-blue--dark text-lg mb-6">
                   Transform your brand
                 </h2>
                 <p class="font-body text-gray--normal line-height mb-6">
@@ -65,7 +66,7 @@
                   brands grow fast. Engage your clients through compelling
                   visuals that do most of the marketing for you.
                 </p>
-                <a class="learn-more--yellow" href="/">Learn more</a>
+                <a class="about--learn-more--yellow" href="/">Learn more</a>
               </div>
             </div>
 
@@ -74,14 +75,14 @@
             </div>
           </div>
 
-          <div class="brand-section flex flex-wrap">
+          <div class="about--container-line flex flex-wrap">
             <div>
               <img src="/image-stand-out.785fa5bf.jpg" class="wh-100" alt="a pink-ish glass with a pink background">
             </div>
 
-            <div class="brand-section--text flex px-6 py-16">
+            <div class="about--text-box flex px-6 py-16">
               <div>
-                <h2 class="brand-section--heading font-heading--900 text-blue--dark text-lg mb-6">
+                <h2 class="about--heading font-heading--900 text-blue--dark text-lg mb-6">
                   Stand out to the right audience
                 </h2>
                 <p class="font-body text-gray--normal line-height mb-6">
@@ -89,21 +90,21 @@
                   photographers, videographers, and copywriters, we'll build and
                   extend your brand in digital places.
                 </p>
-                <a class="learn-more--red" href="">Learn more</a>
+                <a class="about--learn-more--red" href="">Learn more</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="services-section text-center text-sm container flex flex-wrap">
-          <div class="services-section--graphic-design relative">
-            <div class="services-section--text-container absolute px-6 py-16">
-              <h2 class="services-section--heading font-heading--900 text-lg text-green--dark mb-6">
+      <section class="services" id="services">
+        <div class="services--container container text-center text-sm flex flex-wrap">
+          <div class="services--graphic-design relative">
+            <div class="services--text-container absolute px-6 py-16">
+              <h2 class="services--heading font-heading--900 text-lg text-green--dark mb-6">
                 Graphic Design
               </h2>
-              <p class="services-section--text font-body text-green--dark line-height">
+              <p class="services--text font-body text-green--dark line-height">
                 Great design makes you memorable. We deliver artwork that
                 underscores your brand message and captures potential clients'
                 attention.
@@ -111,12 +112,12 @@
             </div>
           </div>
 
-          <div class="services-section--photography relative">
-            <div class="services-section--text-container absolute px-8 py-16">
-              <h2 class="services-section--heading font-heading--900 text-lg text-blue mb-6">
+          <div class="services--photography relative">
+            <div class="services--text-container absolute px-8 py-16">
+              <h2 class="services--heading font-heading--900 text-lg text-blue mb-6">
                 Photography
               </h2>
-              <p class="services-section--text font-body text-blue line-height">
+              <p class="services--text font-body text-blue line-height">
                 Increase your credibility by getting the most stunning,
                 high-quality photos that improve your business image.
               </p>
@@ -125,14 +126,14 @@
         </div>
       </section>
 
-      <section>
-        <div class="testimonial container font-body text-center text-gray--normal line-height px-6">
-          <h3 class="testimonial-heading font-heading--700 text-gray--light uppercase mb-16">
+      <section class="testimonials" id="testimonials">
+        <div class="testimonials--container container font-body text-center text-gray--normal line-height px-6">
+          <h3 class="testimonials--heading font-heading--700 text-gray--light uppercase mb-16">
             Client testimonials
           </h3>
-          <div class="testimonial--responsive flex flex-wrap">
-            <div class="testimonial--box mb-16">
-              <img src="/image-emily.f9b60074.jpg" class="testimonial-image mb-6" alt="a blond woman dressing a pink shirt">
+          <div class="testimonials--responsive flex flex-wrap">
+            <div class="testimonials--box mb-16">
+              <img src="/image-emily.f9b60074.jpg" class="testimonials--image mb-6" alt="a blond woman dressing a pink shirt">
               <p class="mb-6">
                 We put our trust in Sunnyside and they delivered, making sure
                 our needs were met and deadlines were always hit.
@@ -141,8 +142,8 @@
               <small class="text-gray--light">Marketing Director</small>
             </div>
 
-            <div class="testimonial--box mb-16">
-              <img src="/image-thomas.135d1223.jpg" class="testimonial-image mb-6" alt="a dark-skinned man smiling">
+            <div class="testimonials--box mb-16">
+              <img src="/image-thomas.135d1223.jpg" class="testimonials--image mb-6" alt="a dark-skinned man smiling">
               <p class="mb-6">
                 Sunnyside's enthusiasm coupled with their keen interest in our
                 brand's success made it a satisfying and enjoyable experience.
@@ -151,8 +152,8 @@
               <small class="text-gray--light">Chief Operating Officer</small>
             </div>
 
-            <div class="testimonial--box">
-              <img src="/image-jennie.4631d7c0.jpg" class="testimonial-image mb-6" alt="a woman with short hair smiling and dressing a black shirt">
+            <div class="testimonials--box">
+              <img src="/image-jennie.4631d7c0.jpg" class="testimonials--image mb-6" alt="a woman with short hair smiling and dressing a black shirt">
               <p class="mb-6">
                 Incredible end result! Our sales increased over 400% when we
                 worked with Sunnyside. Highly recommended!
@@ -164,43 +165,64 @@
         </div>
       </section>
 
-      <footer>
-        <div class="footer container bg-green">
-          <div class="footer--image-gallery flex flex-wrap">
-            <img src="/image-gallery-milkbottles.104307e1.jpg" alt="milk bottles">
-            <img src="/image-gallery-orange.ceffec0a.jpg" alt="an orange">
-            <img src="/image-gallery-cone.25191941.jpg" alt="an ice-cream cone">
-            <img src="/image-gallery-sugar-cubes.61e8cbf1.jpg" alt="a stack of suggar cubes">
+      <footer class="footer container bg-green text-green--light">
+        <div class="footer--image-gallery grid mb-16">
+          <picture>
+            <source media="(min-width: 800px)" srcset="/image-gallery-milkbottles.d57a5f82.jpg">
+            <img src="/image-gallery-milkbottles.104307e1.jpg" alt="Some milk bottles with some clouds in the background.">
+          </picture>
+
+          <picture>
+            <source media="(min-width: 800px)" srcset="/image-gallery-orange.9bdb077b.jpg">
+            <img src="/image-gallery-orange.ceffec0a.jpg" alt="An orange in a white plate with blue borders.">
+          </picture>
+
+          <picture>
+            <source media="(min-width: 800px)" srcset="/image-gallery-cone.f9a5280c.jpg">
+            <img src="/image-gallery-cone.25191941.jpg" alt="Ice-cream cone with a blue background.">
+          </picture>
+
+          <picture>
+            <source media="(min-width: 800px)" srcset="/image-gallery-sugar-cubes.d319490b.jpg">
+            <img src="/image-gallery-sugar-cubes.61e8cbf1.jpg" alt="A stack of suggar cubes with a pink background.">
+          </picture>
+        </div>
+
+        <div class="footer--content grid">
+          <a href="#">
+            <img class="footer--logo mb-6" src="/logo-footer.b7181d29.svg" alt="sunnyside logo">
+          </a>
+
+          <div class="footer--links font-body mb-16">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#testimonials">Projects</a>
           </div>
 
-          <div class="text-sm text-green--light text-center pt-10 px-6">
-            <img src="/logo-footer.b7181d29.svg" alt="sunnyside logo">
-            <div class="footer--links font-body flex px-4 mt-6 mb-12">
-              <a href="#">About</a>
-              <a href="#">Services</a>
-              <a href="#">Projects</a>
-            </div>
-            <div class="footer--social-links flex py-6">
-              <a href="/">
-                <i class="fa-brands fa-facebook-square"></i>
-              </a>
-              <a href="/">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="/">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-              <a href="/">
-                <i class="fa-brands fa-pinterest-square"></i>
-              </a>
-            </div>
-            <div class="footer--coded-by text-sm">
-              Challenge by
-              <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
-              <br>
-              Coded by
-              <a href="https://github.com/leandroreiz" target="_blank">Leandro Reis</a>
-            </div>
+          <div class="footer--social-links mb-6">
+            <a href="#">
+              <i class="fa-brands fa-facebook-square"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-pinterest-square"></i>
+            </a>
+          </div>
+
+          <div class="footer--coded-by text-center text-sm mb-2">
+            Challenge by
+            <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+            <br>
+            Coded by
+            <a href="https://github.com/leandroreiz" target="_blank">Leandro Reis</a>
           </div>
         </div>
       </footer>
