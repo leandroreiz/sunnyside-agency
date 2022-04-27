@@ -1242,7 +1242,12 @@ header .navbar--items {
   }
 }
 
+header .navbar--items a {
+  color: #fff;
+}
+
 header .navbar--items .contact-btn {
+  color: #23303e;
   border-radius: 30px;
   transition: all .3s;
 }
@@ -1250,6 +1255,44 @@ header .navbar--items .contact-btn {
 header .navbar--items .contact-btn:hover {
   color: #fff;
   background-color: #fff3;
+}
+
+header .navbar--items.mobile {
+  width: calc(100% - 3rem);
+  height: 65vh;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+header .navbar--items.mobile a {
+  color: #818498;
+}
+
+header .navbar--items.mobile .contact-btn {
+  color: #23303e;
+  background-color: #fad400;
+  border-radius: 30px;
+  transition: all .3s;
+}
+
+header .navbar--items.mobile:before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: -28px;
+  right: 0;
 }
 
 header .navbar .menu-icon {
@@ -1451,6 +1494,12 @@ header .navbar .menu-icon {
 
 .footer {
   height: 100vh;
+}
+
+@media (min-width: 800px) {
+  .footer {
+    height: auto;
+  }
 }
 
 .footer--image-gallery {
